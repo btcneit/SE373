@@ -8,6 +8,9 @@ a {
   color: #00B7FF;
   padding: 5px;
 }
+	a.selected{
+		color:#cccccc;
+	}
 
 section.content{
 	width:100%;
@@ -22,3 +25,49 @@ section.content{
 		width:90%;
 		padding: 5px;
 	}
+		img{
+
+		}
+			div.img-replace{
+				width: 100%;
+				display:block;
+				background-size: cover;
+				background-position: center;
+				background-image:url("/images/image.jpg");
+				height:400px;
+				margin-top:5px;
+			}
+		form.form-vertical{
+			margin-top:5px;
+			width:200px;
+			padding: 5px;
+		}
+			input[type="text"]{
+				width:185px;
+				padding:5px;
+				margin-bottom: 5px;
+			}
+			textarea{
+				width:185px;
+				padding: 5px;
+			}
+			input[type="submit"]{
+				width:100%;
+				appearance: none;
+				-webkit-appearance: none;
+				border: 1px solid #5bcffd;
+				background-color: #5bcffd;
+				color:#fff;
+				border-radius: 10px;
+			}
+
+				input[type="submit"]:hover{
+					border: 1px solid #00B7FF;
+					background-color: #00B7FF;
+				}
+			span#error.form-control{
+				color:#f00;
+			}
+		ul.results{
+			list-style-type: none;
+		}

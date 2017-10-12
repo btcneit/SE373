@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
     if (req.query.empty === 'true') {
         msg = 'Please enter a value';
     }
-  res.render('form', { title: 'Form' });
+  res.render('form', { title: 'Form', error: msg});
 }).post('/', function(req, res, next) {
    if (req.method === 'POST' 
    	&& req.body.name.length
@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
         next();
         
     } else {
-       res.render('form', { title: 'Form'});
+       res.render('form', { title: 'Form', error: "Invalid Input"});
     }   
 }).post('/', function(req, res, next) {
    if (req.method === 'POST' 

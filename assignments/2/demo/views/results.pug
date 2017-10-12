@@ -2,6 +2,11 @@ extends layout
 
 block content
 	h1 Results
-	h1= name
-	h2= email
-	p= comments
+	a(href="/") Index
+	a(href="/about") About
+	a(href="/form" class="selected") Form
+
+	ul.results
+		li <b>Name:</b> #{name}
+		li <b>Email:</b> #{email}
+		li <b>Comments:</b>	#{comments}
