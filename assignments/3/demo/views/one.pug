@@ -17,7 +17,9 @@ mixin make(val)
 	tr
 		while b < val
 			-var color = ((1<<24)*Math.random()|0).toString(16);
-			td(style='background-color:#'+color+';')= color
+			-var c = "#"+color;
+			td(style='background-color:'+c+'; color:#000;')= c
+				span(style='color:#fff;')= c
 			-b++;
 
 block content
