@@ -1,0 +1,30 @@
+extends layout
+
+mixin list()
+	-var options = [3,4,5,10,20];
+	each op in options
+		option(value=op)= op
+
+mixin generate(val)
+	- var a = 0;
+	tbody
+		while a < val
+			+make(val)
+			-a++;	
+
+mixin make(val)
+	-var b = 0;
+	tr
+		while b < val
+			-var color = ((1<<24)*Math.random()|0).toString(16);
+			td(style='background-color:#'+color+';')= color
+			-b++;
+
+block content
+	form(action="one" method="post")
+		select(name="val" id="val")
+			+list()
+		span= error
+		input(type="submit")
+	table
+		+generate(val)
