@@ -1,5 +1,29 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	h1= title
+	h2= message
+	p
+		a(href="./view") View
+		
+	if errors 
+		ul
+			for error in errors
+				li= error.msg
+
+	form(action="/", method="post", role="form")
+		h3 Name
+		input#firstname(type="text" placeholder="First Name" name="firstname")
+		input#lastname(type="text" placeholder="Last Name" name="lastname")
+		h3 Department
+		select#department(name="department")
+			option(value="IT" selected="selected") IT
+			option(value="HR") HR
+			option(value="ST") ST
+		input#jobtitle(type="text" placeholder="Job Title" name="jobtitle")
+		input#salary(type="number" placeholder="Salary" name="salary")
+		h3 Start Date
+		input#startdate(type="date" name="startdate")
+		
+		br
+		input(type="submit" value="Submit")

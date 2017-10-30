@@ -6,3 +6,24 @@ body {
 a {
   color: #00B7FF;
 }
+
+form{
+	width:100%;
+	max-width: 300px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select
+{
+	width:calc(100% - 6px);
+	font-size: 16px;
+	padding:2px;
+	margin:5px 0px;
+	border:1px #ccc solid;
+}
+
+select{
+	width:calc(100% - 4px);
+}

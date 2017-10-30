@@ -6,7 +6,7 @@ block content
 		a(href="/") Index
 		a(href="/about") About
 		a(href="/form" class="selected") Form
-	  
+	form(method="post" action="/form")  
 		input#name.form-control(name="name" placeholder="Name" type="text")
 		input#email.form-control(name="email" placeholder="Email" type="text")
 		textarea#comments.form-control(name="comments" placeholder="Comments")
