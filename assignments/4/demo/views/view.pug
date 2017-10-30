@@ -1,0 +1,43 @@
+extends layout
+
+
+block content
+	h1=title
+	h2= message
+	
+	p
+		a(href="../") Index
+
+	if results.length
+		table
+			thead
+				tr
+					th First Name
+					th Last Name
+					th Department
+					th Start Date
+					th Job Title
+					th Salary
+					th
+					th
+			tbody
+				each result in results
+					tr
+						td
+							=result.firstName
+						td
+							=result.lastName
+						td
+							=result.department
+						td
+							=result.startDate
+						td
+							=result.jobTitle
+						td
+							=result.salary
+						td
+							a(href="../update/"+result._id) Update
+						td
+							a(href="../delete/"+result._id) Delete
+	else
+		p No results found

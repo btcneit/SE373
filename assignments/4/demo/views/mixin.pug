@@ -1,0 +1,8 @@
+mixin formatDate(dateString)
+	-var date = new Date(dateString);
+	-var d = date.getDate();
+	-var m0 = ""+(date.getMonth() + 1);
+	-var m = (m0.length == 1)? "0"+m0: m0;
+	-var y = date.getFullYear();
+	-var output = `${y}-${m}-${d}`;
+	input#startdate(type="date" name="startdate" value= output)

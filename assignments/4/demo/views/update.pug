@@ -1,0 +1,28 @@
+extends layout
+
+block content
+	h1= title
+	p
+		a(href="../view") View
+		
+	if errors 
+		ul
+			for error in errors
+				li= error.msg
+
+	form(action="/update", method="POST", role="form")
+		h3 Name
+		input#firstname(type="text" placeholder="First Name" name="firstname" value=results.firstName)
+		input#lastname(type="text" placeholder="Last Name" name="lastname" value=results.lastName)
+		h3 Department
+		select#department(name="department")
+			option(value="IT" selected=results.department == "IT") IT
+			option(value="HR" selected=results.department == "HR") HR
+			option(value="ST" selected=results.department == "ST") ST
+		input#jobtitle(type="text" placeholder="Job Title" name="jobtitle" value=results.jobTitle)
+		input#salary(type="number" placeholder="Salary" name="salary" value=results.salary)
+		h3 Start Date
+		+formatDate(results.startDate)
+		input(type="hidden" name="_id" value=results._id)
+		
+		input(type="submit" value="Submit")
