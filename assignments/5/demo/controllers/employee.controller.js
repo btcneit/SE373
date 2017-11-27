@@ -51,11 +51,9 @@ module.exports.create = function(req, res) {
         salary: req.body.salary
     })
     .then(function(dataSaved){
-        debug(dataSaved);
         sendJSONresponse(res, 201, dataSaved);
     })
     .catch(function(err){ 
-        debug(err);
         sendJSONresponse(res, 400, err);
     });
 
