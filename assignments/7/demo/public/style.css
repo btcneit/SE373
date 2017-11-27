@@ -1,0 +1,208 @@
+html, body{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+
+ /* Absolute Center Spinner */
+.spa-loading {
+    bottom: 0;
+    height: 2em;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    width: 2em;
+    z-index: 999;
+}
+
+/* Transparent Overlay */
+.spa-loading:before {
+    background-color: rgba(0,0,0,0.3);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;  
+    width: 100%;
+}
+
+.visible {
+    visibility: visible;
+}
+
+
+*[data-bind-display=hidden]:not(input):not(select):not(textarea) {    
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    visibility: hidden;
+}
+*[data-bind-display=visible]:not(input):not(select):not(textarea) {    
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+    visibility: visible;
+}
+
+
+.table td {
+    vertical-align: middle;
+}
+
+.spacer {
+    margin-bottom: 1rem;
+}
+
+input:required:invalid, 
+select:required:invalid,
+textarea:required:invalid
+{
+  border: 1px solid red;
+}
+
+input:required:valid, 
+select:required:valid,
+textarea:required:valid
+{
+  border: 1px solid green;
+}
+
+
+input[type="checkbox"]:required {
+    display: none;
+}
+
+input[type="checkbox"]:required:invalid + label::before {
+  content: "\2610";
+  padding-right: 0.2em;
+  font-size: 1.6em;
+  color: red;
+}
+
+input[type="checkbox"]:required:valid + label::before {
+  content: "\2611";
+  padding-right: 0.2em;
+  font-size: 1.6em;
+  color: green;
+}
+
+
+section.navigation{
+  width:100%;
+  height:55px;
+  background-color:#333;
+}
+    div.navigation-container{
+      width:100%;
+      max-width: 1024px;
+      clear:both;
+      position: relative;
+      margin:0 auto;
+    }
+
+      div.navigation-left,
+      nav.navigation-right{
+        height: 100%;
+        display: flex;
+        margin-top:10px;
+      }
+      div.navigation-left{
+        float:left;
+      }
+        h1.navigation-title{
+          margin:0;
+          color:#fff;
+          padding:0;
+          text-align: center;
+        }
+      nav.navigation-right{
+        float:right;
+        margin-top:17px;       
+      }
+        a.navigation-item{
+          color:#ccc;
+          margin:0 5px;
+          float: right;
+          text-decoration: none;
+          border-bottom: dashed #ccc 1px;
+          font-weight: normal;
+          transition: 0.5s all;
+        }
+          a.navigation-item:hover{
+            color:#fff;
+            font-weight: bold;
+            border-bottom: dashed #fff 2px;
+          }
+
+section.content{
+  width:100%;
+}
+  div.spa-content{
+    width:100%;
+    max-width: 1024px;
+    margin:0 auto;
+  }
+    h1.content-title{
+      margin:10px;
+      font-size:20px;
+    }
+
+    table.content-table{
+      width:100%;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+      thead{
+        background-color:#ddd;
+      }
+        th{
+          text-align: left;
+          padding:5px;
+        }
+      tr:nth-child(even){
+        background-color: #eee;
+      }
+        td{
+          padding:5px;
+        }
+      button{
+        -webkit-appearance:none;
+        appearance:none;
+        padding:5px;
+        background-color: rgba(255,255,255,1);
+        border:1px solid;
+        border-radius: 5px;
+        transition: 1s all;
+        cursor: pointer;
+      }
+        button.update{
+          border-color:#c4df9b;
+          color:#c4df9b;
+        }
+
+          button.update:hover{
+            border-color:#c4df9b;
+            color:#fff;
+            background-color:rgba(196, 223, 155, 1);
+          }
+
+        button.delete{
+          border-color:#f26c4f;
+          color:#f26c4f;
+        }
+          button.delete:hover{
+            border-color:#f26c4f;
+            color:#fff;
+            background-color:rgba(242, 108, 79, 1); 
+          }
+    form.content-form{
+      width:100%;
+      max-width: 300px;
+    }
+      div.content-form-item{
+        padding:5px;
+        clear:both;
+      }
